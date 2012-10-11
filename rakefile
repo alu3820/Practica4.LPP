@@ -1,0 +1,10 @@
+require 'rake'
+require 'rake/testtask'
+ 
+task :test => [:test_units]
+ 
+desc "Ejecutando los tests"
+Rake::TestTask.new("test_units") { |t|
+  t.pattern = '*_test.rb'  # busca los ficheros acabados en '*_test.rb'
+  t.verbose = true
+}
